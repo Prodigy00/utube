@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import youtube from "../apis/youtube.js";
+import VideoList from "./VideoList";
 
 class App extends Component {
   state = { videos: [] };
@@ -22,8 +23,8 @@ class App extends Component {
     return (
       <div className="ui container">
         {/* custom event handlers can be passed as props with any name you choose when submitted */}
-        <SearchBar onQuerySubmit={this.onSearchSubmit} />I have{" "}
-        {this.state.videos.length} videos.
+        <SearchBar onQuerySubmit={this.onSearchSubmit} />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
