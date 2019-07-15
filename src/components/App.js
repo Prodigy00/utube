@@ -4,7 +4,7 @@ import youtube from "../apis/youtube.js";
 import VideoList from "./VideoList";
 
 class App extends Component {
-  state = { videos: [] };
+  state = { videos: [], selectedVideo: null };
 
   onSearchSubmit = async userQuery => {
     const KEY = "AIzaSyAsB7jWvMJcT2IMkQon-XWEOZ7-Lp8yM0E";
