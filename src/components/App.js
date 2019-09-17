@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import youtube from "../apis/youtube.js";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import { KEY } from "../apis/env";
 
 class App extends Component {
   state = { videos: [], selectedVideo: null };
@@ -12,7 +13,6 @@ class App extends Component {
   }
 
   onSearchSubmit = async userQuery => {
-    const KEY = "AIzaSyAsB7jWvMJcT2IMkQon-XWEOZ7-Lp8yM0E";
     const response = await youtube.get("/search", {
       params: {
         part: "snippet",
